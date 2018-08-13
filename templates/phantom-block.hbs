@@ -50,6 +50,21 @@
             </li>
             {{/each}}
         </ul>
+
+        <h5>
+            <i class="bts bt-fw bt-info-circle h5"></i> Playbooks
+        </h5>
+
+        <div>
+            <select onchange={{action 'onSelectPlaybook' value="target.value" }}>
+                {{#each detail.playbooks as |playbook|}}
+                <option value="{{playbook.id}}">{{playbook.name}}</option>
+                {{/each}}
+            </select>
+            <button {{action "runPlaybook" detail.result.id }} class="btn material btn-primary">Run</button>
+        </div>
+
+        {{message}}
     </div>
     {{/each}}
 </div>
