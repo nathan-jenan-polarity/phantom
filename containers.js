@@ -20,7 +20,6 @@ class Containers {
             }
 
             async.each(entities, (entity, callback) => {
-                count += 1;
                 let requestOptions = ro.getRequestOptions(this.integrationOptions);
                 requestOptions.url = this.integrationOptions.host + '/rest/search';
                 requestOptions.qs = {
