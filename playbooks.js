@@ -13,6 +13,10 @@ class Playbooks {
     listPlaybooks(callback) {
         this.requestWithDefaults({
             url: `${this.options.host}/rest/playbook`,
+            qs: {
+                _filter_labels__contains: "'events'", // TODO update this if you add more event types
+                _exclude_category: "'deprecated'"
+            },
             method: 'GET'
         }, 200, (err, body) => {
             if (err) {

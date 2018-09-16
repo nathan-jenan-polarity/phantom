@@ -5,7 +5,10 @@ polarity.export = PolarityComponent.extend({
     actions: {
         runPlaybook: function (containerId) {
             let self = this;
+            self.set('message', null);
+
             console.log('sending message with cont id ' + containerId + ' play id' + playbookId);
+            
             this.sendIntegrationMessage({ data: { containerId: containerId, playbookId: playbookId } })
                 .then(function (/* response */) {
                     self.set('message', "Success!");
