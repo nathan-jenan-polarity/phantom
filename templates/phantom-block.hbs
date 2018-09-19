@@ -56,12 +56,21 @@
         </h5>
 
         <div>
-            <select onchange={{action 'onSelectPlaybook' value="target.value" }}>
+            <select size=3 onchange={{action 'onSelectPlaybook' value="target.value" }}>
                 {{#each detail.playbooks as |playbook|}}
                 <option value="{{playbook.id}}">{{playbook.name}}</option>
                 {{/each}}
             </select>
             <button {{action "runPlaybook" detail.result.id }} class="btn material btn-primary">Run</button>
+        </div>
+
+        <div>
+            Test select
+            <select>
+                <option value="asdf">asdf</option>
+                <option value="qwerty">qwerty</option>
+                <option value="1234">1234</option>
+            </select>
         </div>
 
         {{message}}
